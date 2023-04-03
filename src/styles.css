@@ -1,4 +1,9 @@
-*{
+/* Base styles (extra small devices - mobile) */
+/* CSS rules */
+html{
+    font-size: 14px;
+}
+body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,88 +14,81 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Inter', sans-serif;
     color: #222;
 }
-.navbar{
-    padding: 8px;
-}
-.navbar img{
-    width: 110px;
-}
-.landing{
-    width: 100%;
-    margin: 0 auto;
-}
-.landing img{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-h1{
-    text-align: center;
-    margin-top: 35px;
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-.text-home{
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 20px;
-    font-size: 1.25rem;
-    padding: 0 20px;
-}
-.about-text{
-    width: 50%;
-}
-.about-text p{
-    color: #444;
-}
-.about-text-note{
-    width: 50%;
-}
 a{
     text-decoration: none;
     color: #0EA5E9;
 }
-
-.aboutText-img{
-    width: 50%;
-    height: 200px;
+.navbar{
+    padding: 8px;
+    margin: 0;
 }
+#logo-with-text{
+    display: none;
+}
+#banner{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+h1{
+    text-align: center;
+    margin: 12px 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.about-text{
+    font-size: 1.25rem;
+}
+.text-home{
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 8px;
+    flex-direction: column;
+}
+
 .text-home img{
     width: 100%;
     border-radius: 5px;
 }
+.aboutText-img{
+    width: 100%;
+}
 h2{
     text-align: center;
-    margin-top: 60px;
     font-size: 2rem;
     font-weight: 600;
 }
 .jobs{
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     margin-top: 20px;
     padding: 0 20px;
 }
+#jobs-list{
+    display: block;
+}
 #jobs-table{
-    width: 100%;
-    border: 1px solid gray;
-    border-collapse: collapse;
+    display: none;
 }
-.jobs-table-header th{
-    background-color: #BFDBFE;
-    text-align: center;
-}
-#jobs-table tr:nth-child(odd){
-    background-color: #EFF6FF;
-}
-.jobs-table-header th, .table-row td{
-    border: 1px solid gray;
+.job{
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    border-radius: 5px;
     padding: 8px;
+}
+.job-title{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #222;
+}
+.job-detail{
+    margin-top: 4px;
+    color: #555;
 }
 .application{
     padding: 0 20px;
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
 }
 form{
@@ -106,6 +104,7 @@ input, select, textarea{
     border-radius: 5px;
     border: 1px solid gray;
     margin-top: 4px;
+    width: 90%;
 }
 textarea{
     width: 80%;
@@ -128,12 +127,121 @@ label{
 .footer{
     margin-top: 40px;
     text-align: center;
-    background-color: #FAFAFA;
+    background-color: #E2E8F0;
     padding: 30px 0;
 }
 .footer a{
-    margin-right: 20px;
+    margin: 8px 16px;
+    display: block;
 }
 .footer p{
     margin-top: 20px;
+    text-align: center;
 }
+
+
+/* Small devices (tablets) */
+@media screen and (min-width: 576px) {
+    /* CSS rules */
+    html{
+        font-size: 16px;
+    }
+    #logo-with-text{
+        display: block;
+        width: 110px;
+    }
+    #logo{
+        display: none;
+    }
+    #banner{
+        height: 200px;
+    }
+
+    h1{
+        margin-top: 16px 0;
+    }
+    .about-text{
+        font-size: 1.25rem;
+    }
+    h2{
+       margin-top: 40px;
+    }
+    input, select{
+        width: auto;
+    }
+    textarea{
+        width: 80%;
+    }
+    .footer a{
+        margin: 8px 16px;
+        display: inline;
+    }
+  }
+  
+  /* Medium devices (laptops) */
+  @media screen and (min-width: 768px) {
+    /* CSS rules */
+    #banner{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    h1{
+        margin-top: 20px 0;
+    }
+    .text-home{
+        max-width: 800px;
+        flex-direction: row;
+    }
+    .about-text{
+        width: 50%;
+        padding-right: 8px;
+    }
+    .aboutText-img{
+        width: 50%;
+    }
+    h2{
+        margin-top: 60px;
+    }
+    .jobs{
+        min-width: 800px;
+    }
+    #jobs-list{
+        display: none;
+    }
+    #jobs-table{
+        display: table;
+        width: 100%;
+        border: 1px solid gray;
+        border-collapse: collapse;
+    }
+    .jobs-table-header th{
+        background-color: #BFDBFE;
+        text-align: center;
+    }
+    #jobs-table tr:nth-child(odd){
+        background-color: #EFF6FF;
+    }
+    .jobs-table-header th, .table-row td{
+        border: 1px solid gray;
+        padding: 8px;
+    }
+    .application{
+        max-width: 800px;
+    }
+  }
+  
+  /* Large devices (desktops) */
+  @media screen and (min-width: 992px) {
+    /* CSS rules */
+  }
+  
+  /* Extra large devices (large desktops) */
+  @media screen and (min-width: 1200px) {
+    /* CSS rules */
+    #banner{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+  }
